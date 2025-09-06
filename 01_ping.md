@@ -1,13 +1,19 @@
-o	**Use ping module to verify connectivity to all managed nodes.**
+##	**o Use ping module to verify connectivity to all managed nodes.**
 
 ![Image](https://github.com/user-attachments/assets/de33d8fc-6c48-4055-bcb3-6229ea680d15)
 
 
 **o	File: playbooks/01_ping.yml**
-**root@control:~/ansible-labs/playbooks# ansible-playbook 01_ping.yml --syntax-check**  ## To check playbook syntax errors
+
+  ## To check playbook syntax errors
+  
+**root@control:~/ansible-labs/playbooks# ansible-playbook 01_ping.yml --syntax-check**
 
 playbook: 01_ping.yml
-**root@control:~/ansible-labs/playbooks# ansible-playbook 01_ping.yml --check**  ## Dry run to simulate the action not the actual run
+
+ ## Dry run to simulate the action not the actual run
+ 
+**root@control:~/ansible-labs/playbooks# ansible-playbook 01_ping.yml --check**
 
 PLAY [ping all hosts] ***************************************************************************************************************
 
@@ -28,6 +34,8 @@ node2                      : ok=1    changed=0    unreachable=0    failed=0    s
 
 node3                      : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
+
+## Actual run of playbook to check the ping test
 
 **root@control:~/ansible-labs/playbooks# ansible-playbook 01_ping.yml**
 
