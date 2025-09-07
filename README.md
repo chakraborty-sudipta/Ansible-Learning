@@ -5,102 +5,106 @@
 **Environment: 1 Ansible control node and 3 managed host nodes.**
 
 **Lab hierarchical Structure:** 
+<pre>
+root@control:~/ansible-labs/playbooks# tree ~/ansible-labs/**
 
-**root@control:~/ansible-labs/playbooks# tree ~/ansible-labs/**
+/root/ansible-labs/
 
-**/root/ansible-labs/**
+|-- README.md
 
-**|-- README.md**
+|-- ansible.cfg
 
-**|-- ansible.cfg**
+|-- files
 
-**|-- files**
+|   |-- welcome.txt
 
-**|   `-- welcome.txt**
+|-- group_vars
 
-**|-- group_vars**
+|    |-- all.yml
 
-**|    |-- all.yml**
+|    |-- dbservers.yml
 
-**|    |-- dbservers.yml**
+|    |-- webservers.yml
 
-**|   `-- webservers.yml**
+|-- host_vars
 
-**|-- host_vars**
+|   |-- node1.yml
 
-**|   |-- node1.yml**
+|   |-- node2.yml
 
-**|   `-- node2.yml**
+|-- hosts.ini
 
-**|-- hosts.ini**
+|-- inventories
 
-**|-- inventories**
+|   |-- prod
 
-**|   |-- prod**
+|   |   -- hosts.ini
 
-**|   |   `-- hosts.ini**
+|   |-- stage
 
-**|   `-- stage**
+|   |   -- hosts.ini
 
-**|       `-- hosts.ini**
+|-- playbooks
 
-**|-- playbooks**
+|   |-- 01_ping.yml
 
-**|   |-- 01_ping.yml**
+|   |-- 02_install_packages.yml
 
-**|   |-- 02_install_packages.yml**
+|   |-- 03_manage_users.yml
 
-**|   |-- 03_manage_users.yml**
+|   |-- 04_copy_files.yml
 
-**|   |-- 04_copy_files.yml**
+|   |-- 05_deploy_template.yml
 
-**|   |-- 05_deploy_template.yml**
+|   |-- 06_service_tasks.yml
 
-**|   |-- 06_service_tasks.yml**
+|   |-- 07_loops.yml
 
-**|   |-- 07_loops.yml**
+|   |-- 08_conditionals.yml
 
-**|   |-- 08_conditionals.yml**
+|   |-- 09_handlers.yml
 
-**|   |-- 09_handlers.yml**
+|   |-- 10_roles.yml
 
-**|   `-- 10_roles.yml**
+|-- roles
 
-**|-- roles**
+|   |-- dbservers
 
-**|   |-- dbservers**
+|   |  -- tasks
 
-**|   |   `-- tasks**
+|   |  -- main.yml
 
-**|   |       `-- main.yml**
+|   |-- webservers
 
-**|   `-- webserver**
+|   |  -- tasks
+   
+|   |  -- main.yml 
 
-**|       |-- defaults**
+|-- defaults   
 
-**|       |   `-- main.yml**
+|   | -- main.yml
 
-**|       |-- files**
+|-- files
 
-**|       |   `-- nginx.conf**
+|   |  -- nginx.conf
 
-**|       |-- handlers**
+|   |  -- handlers
 
-**|       |   `-- main.yml**
+|   |  -- main.yml
 
-**|       |-- tasks**
+|-- tasks
 
-**|       |   `-- main.yml**
+|   |  -- main.yml
 
-**|       |-- templates**
+|   |  -- templates
 
-**|       |   `-- index.html.j2**
+|   |  -- index.html.j2
 
-**|       `-- vars**
+|-- vars
 
-**|           `-- main.yml**
+|   |-- main.yml
 
-**`-- templates**
+|-- templates
 
-    **`-- motd.j2**
-    
+|   |-- motd.j2
+</pre>
