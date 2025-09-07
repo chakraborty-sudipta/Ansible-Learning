@@ -56,6 +56,13 @@ root@node2:~# curl 172.18.0.3
 <head><title>Welcome to my webpage created by Ansible</title></head>
 <body><h1>This webpage is served from node1 using Ansible</h1></body>
 </html>
+
+root@control:~/ansible-labs/playbooks# ansible -i /root/ansible-labs/hosts.ini all -m uri -a "url=http://localhost status_code=200" -o
+
+node2 | SUCCESS => {"accept_ranges": "bytes","ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"},"changed": false,"connection": "close","content_length": "154","content_type": "text/html","cookies": {},"cookies_string": "","date": "Sun, 07 Sep 2025 10:40:06 GMT","elapsed": 0,"etag": "\"68bd4f56-9a\"","last_modified": "Sun, 07 Sep 2025 09:24:38 GMT","msg": "OK (154 bytes)","redirected": false,"server": "nginx/1.18.0 (Ubuntu)","status": 200,"url": "http://localhost"}
+node1 | SUCCESS => {"accept_ranges": "bytes","ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"},"changed": false,"connection": "close","content_length": "154","content_type": "text/html","cookies": {},"cookies_string": "","date": "Sun, 07 Sep 2025 10:40:06 GMT","elapsed": 0,"etag": "\"68bd4f56-9a\"","last_modified": "Sun, 07 Sep 2025 09:24:38 GMT","msg": "OK (154 bytes)","redirected": false,"server": "nginx/1.18.0 (Ubuntu)","status": 200,"url": "http://localhost"}
+
+Expected: ACTIVE or HTTP 200
   
 </pre>
 
