@@ -6,7 +6,7 @@
 
 **Lab hierarchical Structure:** 
 <pre>
-root@control:~/ansible-labs/playbooks# tree ~/ansible-labs/**
+root@control:~/ansible-labs/playbooks# tree ~/ansible-labs/
 
 /root/ansible-labs/
 
