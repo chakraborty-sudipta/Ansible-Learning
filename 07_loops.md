@@ -9,7 +9,16 @@ root@control:~/ansible-labs/playbooks# cat 07_loops.yml
   tasks:
     - name: Install multiple packages
       apt:
-        name: "{{ item }}"
+        name: "{{ item }}"   
+  
+  /* 
+  What is this {{item}} ? item is a special variable automatically created by Ansible when you use loop.
+  On each iteration of the loop, item takes one value from the list.
+  Iteration breakdown:
+  First iteration: item = vim → installs vim
+  Second iteration: item = tree → installs tree
+  Third iteration: item = unzip → installs unzip
+  */
         state: present
       loop:
         - vim
