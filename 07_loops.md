@@ -10,15 +10,6 @@ root@control:~/ansible-labs/playbooks# cat 07_loops.yml
     - name: Install multiple packages
       apt:
         name: "{{ item }}"   
-  
-  /* 
-  What is this {{item}} ? item is a special variable automatically created by Ansible when you use loop.
-  On each iteration of the loop, item takes one value from the list.
-  Iteration breakdown:
-  First iteration: item = vim → installs vim
-  Second iteration: item = tree → installs tree
-  Third iteration: item = unzip → installs unzip
-  */
         state: present
       loop:
         - vim
@@ -76,5 +67,12 @@ ii  unzip                          6.0-26ubuntu3.2                         amd64
 ii  vim                            2:8.2.3995-1ubuntu2.24                  amd64        Vi IMproved - enhanced vi editor
 ii  vim-common                     2:8.2.3995-1ubuntu2.24                  all          Vi IMproved - Common files
 ii  vim-runtime                    2:8.2.3995-1ubuntu2.24                  all          Vi IMproved - Runtime files
+
+  What is this {{item}} ? item is a special variable automatically created by Ansible when you use loop.
+  On each iteration of the loop, item takes one value from the list.
+  Iteration breakdown:
+  First iteration: item = vim → installs vim
+  Second iteration: item = tree → installs tree
+  Third iteration: item = unzip → installs unzip
 
 </pre>
